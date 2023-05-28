@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_product', function (Blueprint $table) {
+        Schema::create('product', function (Blueprint $table) {
             $table->id('idProduct');
-            $table->string('Category');
+            $table->string('category');
             $table->string('name');
-            $table->string('Price');
-            $table->string('Stock');
-            $table->string('Image',255);
+            $table->string('price');
+            $table->string('stock');
+            $table->string('image',255);
             $table->timestamps();
-            $table->foreign('idProduct')->references('idDetailTransaction')->on('_detail_transaction');
+            
+            // $table->foreign('idProduct')->references('idDetailTransaction')->on('detail__transaksi');
+            // $table->foreign('idProduct')->references('idDetailTransaction')->on('detail_transaction');
 
             
         });
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_product');
+        Schema::dropIfExists('product');
     }
 };
