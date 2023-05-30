@@ -12,12 +12,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
-    {
-        // Mengambil semua produk dari database
-        $products = Product::all();
-
-        // Mengembalikan data produk dalam format JSON
-        return response()->json($products);
-    }
+ public function index()
+ {
+    # code...
+    $product = Product::all();
+    return response()->json(['data'=>$product]); 
+ }
 }

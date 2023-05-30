@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('detail_transaction', function (Blueprint $table) {
             $table->id('idDetailTransaction');
-            $table->unsignedBigInteger('idTransaksi')->unique();
+            $table->foreignId('idTransaksi')->unique();
             $table->integer('idProduct')->unique();
             $table->string('detailPrice');
             $table->string('quantity');
 
             $table->timestamps();
             $table->foreign('idTransaksi')->references('idTransaksi')->on('_transaksi');
-            $table->foreign('idDetailTransaction')->references('idProduct')->on('product');
+            $table->foreign('idDetailTransaction')->references('idProduct')->on('products');
 
             
 

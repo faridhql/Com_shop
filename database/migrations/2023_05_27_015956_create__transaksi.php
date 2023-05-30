@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('_transaksi', function (Blueprint $table) {
             $table->id('idTransaksi');
-            $table->unsignedBigInteger('idCustomer')->unique();
-            $table->unsignedBigInteger('idPayment')->unique();
-            $table->unsignedBigInteger('idEmployee')->unique();
+            $table->foreignId('idCustomer')->unique();
+            $table->foreignId('idPayment')->unique();
+            $table->foreignId('idEmployee')->unique();
             $table->date('date');
             $table->string('subtotal');
             $table->timestamps();
