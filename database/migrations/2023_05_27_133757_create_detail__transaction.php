@@ -17,8 +17,8 @@ return new class extends Migration
             $table->integer('idProduct')->unique();
             $table->string('detailPrice');
             $table->string('quantity');
-
             $table->timestamps();
+            
             $table->foreign('idTransaksi')->references('idTransaksi')->on('_transaksi');
             $table->foreign('idDetailTransaction')->references('idProduct')->on('products');
 

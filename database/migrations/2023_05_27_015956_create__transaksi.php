@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('idEmployee')->unique();
             $table->date('date');
             $table->string('subtotal');
+            
             $table->timestamps();
 
             $table->foreign('idEmployee')->references('idEmployee')->on('_employee');

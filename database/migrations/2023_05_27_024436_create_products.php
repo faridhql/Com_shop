@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('stock');
             $table->string('image');
             $table->timestamps();
+            $table->softDeletes();
             
             // $table->foreign('idProduct')->references('idDetailTransaction')->on('detail__transaksi');
             // $table->foreign('idProduct')->references('idDetailTransaction')->on('detail_transaction');
